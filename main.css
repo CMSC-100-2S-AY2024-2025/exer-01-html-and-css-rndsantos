@@ -218,6 +218,22 @@ hr {
   margin-left: 50%;
 }
 
+#biography-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+#biography-content h2 {
+  align-self: flex-start;
+  margin-bottom: 1rem;
+}
+
+#biography-content p {
+  letter-spacing: 1px;
+}
+
 footer {
   max-width: 1152px;
   margin: 6rem auto 2rem auto;

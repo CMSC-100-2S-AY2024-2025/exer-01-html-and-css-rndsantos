@@ -29,11 +29,8 @@
 }
 
 :root {
-  --primary-color: #3498db;
-  --secondary-color: #2ecc71;
   --background-color: #0a0a0a;
   --text-color: #fff;
-  --accent-color: #e74c3c;
 }
 
 * {
@@ -46,7 +43,6 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: "PP Neue", monospace;
-  overflow-x: hidden;
 }
 
 section {
@@ -68,6 +64,11 @@ h2 {
   font-weight: 500;
   line-height: 80%;
   font-size: 4rem;
+}
+
+a {
+  font-weight: normal;
+  font-size: 1.5rem;
 }
 
 hr {
@@ -103,7 +104,8 @@ hr {
   position: absolute;
   max-width: 100px;
   bottom: 20%;
-  left: 42.5%;
+  left: 41%;
+  text-align: right;
   font-size: 1rem;
   line-height: 1rem;
   color: white;
@@ -136,7 +138,6 @@ hr {
   margin: auto;
   height: 115%;
   z-index: 0;
-  overflow: clip;
 }
 
 #projects-content {
@@ -217,6 +218,31 @@ hr {
   margin-left: 50%;
 }
 
+footer {
+  max-width: 1152px;
+  margin: 6rem auto 2rem auto;
+}
+
+footer div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+footer a {
+  width: fit-content;
+  color: var(--text-color);
+  text-transform: uppercase;
+  text-decoration: underline;
+  display: inline;
+}
+
+footer img {
+  width: 1rem;
+  height: 1rem;
+}
+
 @media only screen and (max-width: 600px) {
   #hero-content > img {
     position: absolute;
@@ -225,7 +251,7 @@ hr {
     margin: auto;
     height: 100vh;
     z-index: 0;
-    overflow: clip;
+    overflow: hidden;
   }
 
   #hero-content h2::after {
@@ -236,7 +262,7 @@ hr {
     left: 10%;
     font-size: 1rem;
     line-height: 1rem;
-    color: white;
+    color: var(--text-color);
   }
 
   .skill-item {

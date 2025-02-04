@@ -1,31 +1,31 @@
 @font-face {
   font-family: "PP Neue";
   font-weight: normal;
-  src: url("./assets/fonts/ppneuemontreal-book.woff") format("woff");
+  src: url("./assets/fonts/PPNeue/ppneuemontreal-book.woff") format("woff");
 }
 
 @font-face {
   font-family: "PP Neue";
   font-weight: bold;
-  src: url("./assets/fonts/ppneuemontreal-bold.woff") format("woff");
+  src: url("./assets/fonts/PPNeue/ppneuemontreal-bold.woff") format("woff");
 }
 
 @font-face {
   font-family: "PP Neue";
   font-style: italic;
-  src: url("./assets/fonts/ppneuemontreal-italic.woff") format("woff");
+  src: url("./assets/fonts/PPNeue/ppneuemontreal-italic.woff") format("woff");
 }
 
 @font-face {
   font-family: "PP Neue";
   font-weight: 500;
-  src: url("./assets/fonts/ppneuemontreal-medium.woff") format("woff");
+  src: url("./assets/fonts/PPNeue/ppneuemontreal-medium.woff") format("woff");
 }
 
 @font-face {
   font-family: "PP Neue";
   font-weight: lighter;
-  src: url("./assets/fonts/ppneuemontreal-thin.woff") format("woff");
+  src: url("./assets/fonts/PPNeue/ppneuemontreal-thin.woff") format("woff");
 }
 
 :root {
@@ -49,6 +49,10 @@ body {
 }
 
 section {
+  width: 100%;
+}
+
+section > div:first-child {
   max-width: 1152px;
   margin: 0 auto;
 }
@@ -56,9 +60,13 @@ section {
 h1 {
   font-weight: bold;
   font-style: normal;
-  width: fit-content;
-  height: fit-content;
   line-height: 80%;
+}
+
+h2 {
+  font-weight: 500;
+  line-height: 80%;
+  font-size: 4rem;
 }
 
 .no-restrictions {
@@ -66,111 +74,136 @@ h1 {
 }
 
 #hero-content {
-  text-align: center;
-  min-height: 100vh;
+  height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  gap: 2rem;
 }
 
 #hero-content h1 {
   z-index: 99;
-  font-size: 8.55vw;
-  white-space: nowrap;
+  font-size: max(9vw, 4rem);
   text-transform: uppercase;
+  white-space: wrap-reverse;
 }
 
-#hero-content-container > img {
-  anchor-name: --myImage;
+#hero-content h2 {
+  z-index: 99;
+  color: #2ecc71;
+}
+
+#hero-content h2::after {
+  content: "Based in Angono, Rizal, Philippines";
+  position: absolute;
+  max-width: 100px;
+  bottom: 20%;
+  left: 42.5%;
+  font-size: 1rem;
+  line-height: 1rem;
+  color: white;
+}
+
+#hero-content p {
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+#hero-content > div:first-of-type {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#hero-content > div:first-of-type img {
+  width: 2rem;
+}
+
+#hero-content p {
+  font-weight: lighter;
+}
+
+#hero-content > img {
   position: absolute;
   inset: 0;
+  top: 15%;
+  left: 30%;
   margin: auto;
+  height: 115%;
   z-index: 0;
-  mix-blend-mode: luminosity;
+  overflow: clip;
 }
 
-#hero-content-text-container {
-  position-anchor: --myImage;
-  position: absolute;
-  align-self: anchor-center;
-  justify-self: anchor-center;
-  bottom: anchor(top);
-  margin-bottom: 50vh;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 1rem;
-}
+@media only screen and (max-width: 600px) {
+  #hero-content > img {
+    position: absolute;
+    inset: 0;
+    top: 30%;
+    margin: auto;
+    height: 100vh;
+    z-index: 0;
+    overflow: clip;
+  }
 
-#hero-content-text-container > p {
-  color: var(--text-color);
-  font-weight: bold;
-}
-
-.blur-img {
-  -webkit-filter: blur(20px);
-  -moz-filter: blur(20px);
-  -o-filter: blur(20px);
-  -ms-filter: blur(20px);
-  filter: blur(20px);
-}
-
-#primary-skill-container {
-  width: fit-content;
-  padding: 1rem;
-  border-radius: 4rem;
-  background-color: #a2f3c3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
-
-#primary-skill-container img {
-  width: 15%;
-}
-
-.parallax {
-  position: relative;
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-  perspective: 1px;
-}
-
-.parallax::before {
-  content: "Projects";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) translateZ(-2px) scale(3);
-  font-size: 15vw;
-  font-weight: 900;
-  color: rgba(0, 0, 0, 0.07);
-  white-space: nowrap;
-  z-index: -1;
-  background-color: white;
-  padding: 2rem 4rem;
-  border-radius: 10px;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+  #hero-content h2::after {
+    content: "Based in Angono, Rizal, Philippines";
+    position: absolute;
+    max-width: 100px;
+    bottom: 30%;
+    left: 10%;
+    font-size: 1rem;
+    line-height: 1rem;
+    color: white;
+  }
 }
 
 #projects-content {
   position: relative;
-  transform-style: preserve-3d;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   padding: 2rem;
 }
 
+#projects-content h2 {
+  align-self: flex-start;
+}
+
+#project-item-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .project-item {
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px);
-  margin: 2rem 0;
-  padding: 2rem;
+  text-align: center;
+  margin: 2rem 1rem;
   border-radius: 8px;
+  max-width: 500px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-item p:first-of-type {
+  height: fit-content;
+  width: fit-content;
+  font-size: 2rem;
+  font-style: italic;
+}
+
+.project-item p:last-of-type {
+  height: fit-content;
+  width: fit-content;
+  font-size: 1rem;
+  font-weight: normal;
+  margin-bottom: 1rem;
+}
+
+.project-item div:last-of-type {
+  width: 100%;
+}
+
+.project-item img {
+  width: 100%;
+  object-fit: contain;
+  border-radius: 1rem;
 }
 
 .project-thumbnail {

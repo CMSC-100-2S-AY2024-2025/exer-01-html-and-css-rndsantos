@@ -1,1 +1,7 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/VhAR7jGx)
+Roberto Neil Santos<br />
+BS Computer Science<br />
+https://cmsc-100-2s-ay2024-2025.github.io/exer-01-html-and-css-rndsantos/<br />
+Make sure index.html is located at root folder -> Go to Settings -> On the side panel, select Pages -> In Build and Deployment, select a branch to be deployed<br />
+Layout a website first before designing its details.<br />
+<br />
+Note: The website is responsive and can be viewed on both mobile and PC.

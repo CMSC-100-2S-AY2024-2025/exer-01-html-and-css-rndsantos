@@ -46,6 +46,7 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: "PP Neue", monospace;
+  overflow-x: hidden;
 }
 
 section {
@@ -67,6 +68,10 @@ h2 {
   font-weight: 500;
   line-height: 80%;
   font-size: 4rem;
+}
+
+hr {
+  border-color: var(--background-color);
 }
 
 .no-restrictions {
@@ -134,29 +139,6 @@ h2 {
   overflow: clip;
 }
 
-@media only screen and (max-width: 600px) {
-  #hero-content > img {
-    position: absolute;
-    inset: 0;
-    top: 30%;
-    margin: auto;
-    height: 100vh;
-    z-index: 0;
-    overflow: clip;
-  }
-
-  #hero-content h2::after {
-    content: "Based in Angono, Rizal, Philippines";
-    position: absolute;
-    max-width: 100px;
-    bottom: 30%;
-    left: 10%;
-    font-size: 1rem;
-    line-height: 1rem;
-    color: white;
-  }
-}
-
 #projects-content {
   position: relative;
   display: flex;
@@ -206,11 +188,58 @@ h2 {
   border-radius: 1rem;
 }
 
-.project-thumbnail {
-  width: 20%;
-  border-radius: 10px;
+.skill-item {
+  padding: 1rem;
+  font-size: 3rem;
 }
 
-.description {
-  padding: 10px;
+.skill-item p {
+  width: fit-content;
+}
+
+.skill-item p:last-child {
+  font-size: 1rem;
+}
+
+.skill-item:nth-of-type(1) {
+  margin-left: 10%;
+}
+
+.skill-item:nth-of-type(2) {
+  margin-left: 20%;
+}
+
+.skill-item:nth-of-type(3) {
+  margin-left: 40%;
+}
+
+.skill-item:nth-of-type(4) {
+  margin-left: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+  #hero-content > img {
+    position: absolute;
+    inset: 0;
+    top: 30%;
+    margin: auto;
+    height: 100vh;
+    z-index: 0;
+    overflow: clip;
+  }
+
+  #hero-content h2::after {
+    content: "Based in Angono, Rizal, Philippines";
+    position: absolute;
+    max-width: 100px;
+    bottom: 30%;
+    left: 10%;
+    font-size: 1rem;
+    line-height: 1rem;
+    color: white;
+  }
+
+  .skill-item {
+    margin-inline: 2rem !important;
+  }
 }
